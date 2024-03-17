@@ -58,10 +58,9 @@ git checkout $RELEASE
 make install
 allorad version
 
-printGreen "5. Configuring and init node..." && sleep 1
+printGreen "5. Initialize node..." && sleep 1
 GENESIS_URL="https://raw.githubusercontent.com/upshot-tech/networks/main/${ALLORA_CHAIN_ID}/genesis.json"
 PEERS_URL="https://raw.githubusercontent.com/upshot-tech/networks/main/${ALLORA_CHAIN_ID}/peers.txt"
-BLOCKLESS_API_URL="${BLOCKLESS_API_URL:-https://heads.edgenet.allora.network:8443}"   #! Replace with your blockless API URL
 APP_HOME="${APP_HOME:-./data}"
 INIT_FLAG="${APP_HOME}/.initialized"
 KEYRING_BACKEND=os                             
@@ -72,17 +71,17 @@ echo "To re-initiate the node, remove the file: ${INIT_FLAG}"
 if [ ! -f $INIT_FLAG ]; then
     rm -rf ${APP_HOME}/config
 
+
+    #* Setup allorad client
+    allorad --home=${APP_HOME} config set client chain-id $ALLORA_CHAIN_ID
+    allorad --home=${APP_HOME} config set client keyring-backend $KEYRING_BACKEND
+
     #* Init node
     allorad --home=${APP_HOME} init ${MONIKER} --chain-id=${ALLORA_CHAIN_ID} --default-denom $DENOM
 
     #* Download genesis
     rm -f $GENESIS_FILE
     curl -Lo $GENESIS_FILE $GENESIS_URL
-
-    #* Setup allorad client
-    allorad --home=${APP_HOME} config node tcp://localhost:${RPC_PORT}
-    allorad --home=${APP_HOME} config set client chain-id ${ALLORA_CHAIN_ID}
-    allorad --home=${APP_HOME} config set client keyring-backend $KEYRING_BACKEND
 
     #* Create symlink for allorad config
     ln -sf . ${APP_HOME}/.allorad
@@ -91,6 +90,7 @@ if [ ! -f $INIT_FLAG ]; then
 fi
 echo "Node is initialized"
 
+printGreen "6. Create service..." && sleep 1
 # create service file
 sudo tee /etc/systemd/system/allorad.service > /dev/null <<EOF
 [Unit]
@@ -108,7 +108,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 
-printGreen "7. Starting node..." && sleep 1
+printGreen "8. Starting node..." && sleep 1
 # enable and start service
 sudo systemctl daemon-reload
 sudo systemctl enable allorad

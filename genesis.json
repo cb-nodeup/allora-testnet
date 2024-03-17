@@ -1,0 +1,131 @@
+{
+    "moniker": "nodeup.xyz",
+    "chain_id": "testnet",
+    "node_id": "48693408c709fae7685502eb41f5125bdd0ab28a",
+    "gentxs_dir": "",
+    "app_message": {
+     "auth": {
+      "params": {
+       "max_memo_characters": "256",
+       "tx_sig_limit": "7",                                                                                                                                                                                     
+       "tx_size_cost_per_byte": "10",
+       "sig_verify_cost_ed25519": "590",
+       "sig_verify_cost_secp256k1": "1000"                                                                                                                                                                                       
+      },
+      "accounts": []
+     },
+     "bank": {
+      "params": {
+       "send_enabled": [],
+       "default_send_enabled": true
+      },
+      "balances": [],
+      "supply": [],
+      "denom_metadata": [],
+      "send_enabled": []
+     },
+     "consensus": null,
+     "distribution": {
+       "delegator_starting_infos": [
+           {
+               "delegator_address": "allo18j8fws3xctkqfk4mfvag0ep5vprn7vtlwjakfr",
+               "starting_info": {
+                   "height": "74722",
+                   "previous_period": "1",
+                   "stake": "1000.000000000000000000"
+               },
+               "validator_address": "allovaloper18j8fws3xctkqfk4mfvag0ep5vprn7vtlekm440"
+           }
+       ],
+      "params": {
+       "community_tax": "0.020000000000000000",
+       "base_proposer_reward": "0.000000000000000000",
+       "bonus_proposer_reward": "0.000000000000000000",
+       "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+       "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "validator_slash_events": []
+     },
+     "emissions": {
+      "params": {
+       "version": "0.0.3",
+       "epoch_length": "600",
+       "min_topic_unmet_demand": "100",
+       "max_topics_per_block": "2048",
+       "min_request_unmet_demand": "1",
+       "max_missing_inference_percent": "0.200000000000000000",
+       "required_minimum_stake": "100",
+       "remove_stake_delay_window": "86400",
+       "min_request_cadence": "10",
+       "min_weight_cadence": "3600",
+       "max_inference_request_validity": "31449600",
+       "max_request_cadence": "31449600",
+       "percent_rewards_reputers_workers": "0.500000000000000000"
+      },
+      "core_team_addresses": [
+       "allo1srjcynn6jw5l709upwwx70gs3eyjdmkgufcqdt",
+       "allo1uu2fk9gmjkmy8qme46w8hr8j2exfjnsqnweznz",
+       "allo1fk0pt0fj03fxdyyq0mhj5cfq5kv9ncwmtqvy7u",
+       "allo1d6hegr59ftc43xxd2n2vn5ndley699jefwdgq8",
+       "allo1xw354nrfpsw6x3sf7aqnrek0wluyx58zv2uc75",
+       "allo1d54qdljsc3srsy8fz6zzrx90hyzuevnccg88md",
+       "allo1fumaxxyjwdv7y5uh6wxslhxmqf32jtvnr8edlf",
+       "allo1memyg7exjzjdpdv98cfm6u0y0lsz4ev8mk57hc",
+       "allo1shzv768qrxaextjwz0aj6nzhm3cyy4pdug8jy6",
+       "allo12heywwqc75mgk6qg3n0mryw58jn6ujtp7tfvs9"
+      ]
+     },
+     "genutil": {
+      "gen_txs": []
+     },
+     "mint": {
+      "minter": {
+       "inflation": "357.358262400000000000",
+       "annual_provisions": "17867913120000000000000000.000000000000000000"
+      },
+      "params": {
+       "mint_denom": "uallo",
+       "inflation_rate_change": "357.358262400000000000",
+       "inflation_max": "357.358262400000000000",
+       "inflation_min": "0.000000000000000000",
+       "goal_bonded": "0.670000000000000000",
+       "blocks_per_year": "6311520",
+       "max_supply": "1000000000000000000000000000",
+       "halving_interval": "25246080",
+       "current_block_provision": "2831000000000000000000"
+      }
+     },
+     "runtime": null,
+     "staking": {
+      "params": {
+       "unbonding_time": "1814400s",
+       "max_validators": 100,
+       "max_entries": 7,
+       "historical_entries": 10000,
+       "bond_denom": "uallo",
+       "min_commission_rate": "0.000000000000000000"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [
+       "allo18j8fws3xctkqfk4mfvag0ep5vprn7vtlwjakfr"
+      ],
+      "validators": [
+       "allo1un55d7n0rq39dfkets2yzumdkvfd284h5445ea",
+       "allo18j8fws3xctkqfk4mfvag0ep5vprn7vtlwjakfr",
+       "allo1qqxl6alswn4l5nushddlpwvzzexz7l0c2y8t4c"
+      ],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+     }
+    }
+   }
